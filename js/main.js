@@ -1,28 +1,56 @@
 document.addEventListener("DOMContentLoaded", function() {
     
-    /* 1. NAVBAR ACTUALIZADO (Con enlace a CV) */
+    /* =========================================
+       1. NAVBAR DINÁMICO (Con Menú Hamburguesa)
+       ========================================= */
     const navbarPlaceholder = document.getElementById('navbar-placeholder');
     if (navbarPlaceholder) {
         navbarPlaceholder.innerHTML = `
             <nav class="navbar">
                 <div class="navbar-container">
                     <div class="logo">Lenin Zapata</div>
-                    <ul class="nav-menu">
+                    
+                    <div class="hamburger" id="hamburger-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+
+                    <ul class="nav-menu" id="nav-menu">
                         <li><a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a></li>
                         <li><a href="about.html" class="nav-link" data-i18n="nav_about">Sobre Mí</a></li>
                         <li><a href="projects.html" class="nav-link" data-i18n="nav_projects">Proyectos</a></li>
-                        <li><a href="cv.html" class="nav-link" data-i18n="nav_cv">CV</a></li> <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contacto</a></li>
+                        <li><a href="cv.html" class="nav-link" data-i18n="nav_cv">CV</a></li>
+                        <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contacto</a></li>
                         <li><a href="#" id="lang-toggle" class="lang-btn">EN</a></li>
                     </ul>
                 </div>
             </nav>
         `;
 
-        // Active class logic
+        // Lógica Active Class
         const currentPage = window.location.pathname.split("/").pop() || 'index.html';
-        document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.getAttribute('href') === currentPage) link.classList.add('active');
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
         });
+
+        // Lógica del Menú Hamburguesa (Abrir/Cerrar)
+        const hamburger = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Cerrar menú al dar clic en un enlace
+            document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }));
+        }
     }
 
     /* 2. FOOTER (Igual que antes) */

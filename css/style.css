@@ -53,6 +53,7 @@ body {
     font-weight: bold;
     color: var(--accent-electric-blue);
     text-shadow: 0 0 10px var(--accent-electric-blue);
+    white-space: nowrap; 
 }
 
 .nav-menu {
@@ -83,6 +84,15 @@ body {
     height: 2px;
     background: var(--accent-electric-blue);
     border-radius: 1px;
+}
+
+/* Agrega esto justo debajo de tus estilos de .navbar actuales */
+
+.hamburger {
+    display: none; /* Oculto en escritorio */
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-light);
 }
 
 /* ===== HERO SECTION ===== */
@@ -445,44 +455,71 @@ section {
     color: var(--text-gray);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== RESPONSIVE DESIGN (MÓVIL) ===== */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
+    /* Ajustes del Logo */
+    .logo {
+        font-size: 1.2rem; /* Un poco más pequeño para que quepa */
     }
 
-    .hero-subtitle {
-        font-size: 1.3rem;
+    /* Mostrar el botón hamburguesa */
+    .hamburger {
+        display: block;
+        z-index: 1001;
     }
 
+    /* Transformar el menú en un panel vertical */
     .nav-menu {
-        gap: 1rem;
-        font-size: 0.9rem;
+        position: fixed;
+        left: -100%; /* Oculto fuera de la pantalla a la izquierda */
+        top: 70px;   /* Debajo del navbar */
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba(10, 14, 39, 0.98); /* Fondo oscuro casi sólido */
+        width: 100%;
+        text-align: center;
+        transition: 0.3s; /* Animación suave */
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 2rem;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.5);
     }
 
+    /* Clase que activa JavaScript para mostrar el menú */
+    .nav-menu.active {
+        left: 0; /* Entra en la pantalla */
+    }
+
+    .nav-menu li {
+        margin: 1.5rem 0;
+    }
+    
+    /* Ajuste del botón de idioma en móvil */
+    .lang-btn {
+        margin-left: 0;
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 8px 20px;
+    }
+
+    /* Ajustes generales de texto para móvil */
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+    
+    /* Arreglo de la sección About en móvil */
     .about-content {
         grid-template-columns: 1fr;
+        justify-items: center; /* Centrar todo */
     }
-
+    
+    .about-image {
+        position: relative; /* Quitar sticky en móvil porque molesta */
+        top: 0;
+        margin-bottom: 2rem;
+    }
+    
     .about-image img {
-        width: 300px;
-        height: 300px;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
+        width: 250px;
+        height: 250px;
     }
 }
 
