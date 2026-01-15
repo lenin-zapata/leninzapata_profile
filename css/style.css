@@ -457,43 +457,52 @@ section {
 
 /* ===== RESPONSIVE DESIGN (MÓVIL) ===== */
 @media (max-width: 768px) {
-    /* Ajustes del Logo */
-    .logo {
-        font-size: 1.2rem; /* Un poco más pequeño para que quepa */
+    
+    /* 1. ARREGLO PRINCIPAL: Evitar desbordes horizontales */
+    .navbar-container, 
+    .container {
+        padding: 0 1rem; /* Reducimos el espacio lateral */
+        width: 100%;
+        overflow-x: hidden; /* Corta cualquier elemento que se salga */
     }
 
-    /* Mostrar el botón hamburguesa */
+    /* 2. Ajustes del Logo */
+    .logo {
+        font-size: 1.2rem;
+        white-space: nowrap; /* Evita que el nombre se rompa en dos líneas */
+    }
+
+    /* 3. Botón Hamburguesa */
     .hamburger {
         display: block;
         z-index: 1001;
+        margin-left: auto; /* IMPORTANTE: Asegura que se pegue a la derecha */
     }
 
-    /* Transformar el menú en un panel vertical */
+    /* 4. Menú Desplegable */
     .nav-menu {
         position: fixed;
-        left: -100%; /* Oculto fuera de la pantalla a la izquierda */
-        top: 70px;   /* Debajo del navbar */
+        left: -100%;
+        top: 70px;
         gap: 0;
         flex-direction: column;
-        background-color: rgba(10, 14, 39, 0.98); /* Fondo oscuro casi sólido */
+        background-color: rgba(10, 14, 39, 0.98);
         width: 100%;
         text-align: center;
-        transition: 0.3s; /* Animación suave */
+        transition: 0.3s;
         border-bottom: 1px solid var(--border-color);
         padding-bottom: 2rem;
         box-shadow: 0 10px 10px rgba(0,0,0,0.5);
     }
 
-    /* Clase que activa JavaScript para mostrar el menú */
     .nav-menu.active {
-        left: 0; /* Entra en la pantalla */
+        left: 0;
     }
 
     .nav-menu li {
         margin: 1.5rem 0;
     }
     
-    /* Ajuste del botón de idioma en móvil */
     .lang-btn {
         margin-left: 0;
         display: inline-block;
@@ -501,18 +510,33 @@ section {
         padding: 8px 20px;
     }
 
-    /* Ajustes generales de texto para móvil */
+    /* 5. ARREGLO DE PROYECTOS (CRÍTICO) */
+    /* Esto fuerza a las tarjetas a encogerse al tamaño del celular */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* 1 columna flexible (elimina los 350px fijos) */
+        gap: 2rem;
+        padding: 0;
+        margin-top: 2rem;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 100%; /* Se adapta al 100% de la pantalla */
+        margin: 0;
+    }
+
+    /* 6. Textos y About */
     .hero-title { font-size: 2.5rem; }
     .hero-subtitle { font-size: 1.2rem; }
     
-    /* Arreglo de la sección About en móvil */
     .about-content {
         grid-template-columns: 1fr;
-        justify-items: center; /* Centrar todo */
+        justify-items: center;
     }
     
     .about-image {
-        position: relative; /* Quitar sticky en móvil porque molesta */
+        position: relative;
         top: 0;
         margin-bottom: 2rem;
     }
