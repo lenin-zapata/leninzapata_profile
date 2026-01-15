@@ -332,29 +332,43 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     function setLanguage(lang) {
+        // 1. Guardar preferencia
         localStorage.setItem('preferredLang', lang);
         
-        // Traducir elementos normales
+        // 2. Traducir textos generales (con soporte para HTML/Negritas)
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             if (translations[lang][key]) {
-                // CAMBIO AQUÍ: Usamos innerHTML en lugar de textContent
-                // Antes: element.textContent = translations[lang][key];
                 element.innerHTML = translations[lang][key]; 
             }
         });
 
-        // (El resto de la función sigue igual...)
+        // 3. Traducir Placeholders de formularios (si existen)
         const nameInput = document.getElementById('name');
-        // ...
+        const msgInput = document.getElementById('message');
+        if(nameInput) nameInput.placeholder = (lang === 'en') ? "Your Name" : "Tu Nombre";
+        if(msgInput) msgInput.placeholder = (lang === 'en') ? "Tell me about your project..." : "Cuéntame sobre tu proyecto...";
+
+        // 4. ACTUALIZAR EL BOTÓN DE IDIOMA (Esta es la parte clave)
+        const langBtn = document.getElementById('lang-toggle');
+        if(langBtn) {
+            // Aseguramos que tome el texto del diccionario (ES o EN)
+            langBtn.textContent = translations[lang].btn_lang;
+        }
     }
 
     const savedLang = localStorage.getItem('preferredLang') || 'es';
     setLanguage(savedLang);
 
+    // Event Delegation MEJORADO para el botón de idioma
     document.body.addEventListener('click', function(e) {
-        if (e.target && e.target.id === 'lang-toggle') {
+        // Buscamos el elemento #lang-toggle más cercano al clic (por si das clic en el texto o borde)
+        const toggleBtn = e.target.closest('#lang-toggle');
+        
+        // Si encontramos el botón...
+        if (toggleBtn) {
             e.preventDefault();
+            // Verificamos el idioma actual y lo cambiamos
             const currentLang = localStorage.getItem('preferredLang') === 'es' ? 'en' : 'es';
             setLanguage(currentLang);
         }
