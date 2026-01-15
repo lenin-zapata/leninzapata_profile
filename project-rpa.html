@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPA Workflow - Lenin Zapata</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <section class="project-detail-hero">
+        <a href="projects.html" class="back-floating-btn">
+            <i class="fas fa-arrow-left"></i> <span data-i18n="btn_back_projects">Volver</span>
+        </a>
+
+        <h1 class="hero-title" data-i18n="p3_detail_title">Flujo RPA Inteligente</h1>
+        <p class="hero-description" data-i18n="p3_detail_subtitle">Automatización "Human-in-the-Loop" con n8n.</p>
+        
+        <div style="margin-top: 2rem; display: flex; justify-content: center;">
+            <img src="img/workflow.jpg" alt="n8n Workflow Diagram" 
+                 style="width: 100%; max-width: 800px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid var(--border-color);">
+        </div>
+    </section>
+
+    <section class="project-detail-content">
+        
+        <div class="detail-block">
+            <h3 data-i18n="p3_summary_title">Resumen del Proyecto</h3>
+            <p data-i18n="p3_summary_desc">Este proyecto es un flujo de trabajo de automatización de procesos robóticos (RPA) desarrollado en n8n. Su objetivo es optimizar la validación de datos integrando la toma de decisiones humana en procesos automatizados. El robot extrae datos vía API, solicita validación por correo interactivo y actualiza bases de datos automáticamente según la respuesta.</p>
+        </div>
+
+        <div class="detail-block">
+            <h3 data-i18n="p3_prob_title">El Problema a Resolver</h3>
+            <p data-i18n="p3_prob_desc">En los negocios, los procesos de validación manual suelen convertirse en cuellos de botella que pierden tiempo y dinero. La automatización pura a veces falla sin supervisión. Esta solución elimina el problema combinando la velocidad del robot con el criterio humano.</p>
+        </div>
+
+        <div class="detail-block">
+            <h3 data-i18n="p3_how_title">El Robot: Flujo de Trabajo</h3>
+            <ul>
+                <li><i class="fas fa-download"></i> <span data-i18n="p3_step_1"><strong>Extracción:</strong> Conexión a API (JSONPlaceholder) para obtener tareas recientes.</span></li>
+                <li><i class="fas fa-envelope-open-text"></i> <span data-i18n="p3_step_2"><strong>Validación Humana:</strong> Envío de email interactivo al gestor para aprobar/rechazar con un clic.</span></li>
+                <li><i class="fas fa-sync-alt"></i> <span data-i18n="p3_step_3"><strong>Actualización:</strong> El robot actualiza Google Sheets automáticamente basado en la decisión.</span></li>
+            </ul>
+        </div>
+
+        <div class="detail-block">
+            <h3 data-i18n="p3_feat_title">¿Por qué es genial?</h3>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <h4><i class="fas fa-robot"></i> 100% Autónomo</h4>
+                    <p data-i18n="p3_feat_1">Funciona 24/7 sin supervisión</p>
+                </div>
+                <div class="kpi-card">
+                    <h4><i class="fas fa-stopwatch"></i> Eficiencia</h4>
+                    <p data-i18n="p3_feat_2">Decisiones en segundos</p>
+                </div>
+                <div class="kpi-card">
+                    <h4><i class="fas fa-check-double"></i> Calidad</h4>
+                    <p data-i18n="p3_feat_3">Integridad de datos garantizada</p>
+                </div>
+                <div class="kpi-card">
+                    <h4><i class="fas fa-envelope"></i> Interacción</h4>
+                    <p data-i18n="p3_feat_4">Email Interactivo</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-block">
+            <h3 data-i18n="p1_tech_title">Tecnologías</h3>
+            <p data-i18n="p3_tech_desc">n8n (Orquestador), JSONPlaceholder API, Google Sheets, Gmail API.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="projects.html" class="btn btn-secondary">← <span data-i18n="btn_back_projects">Volver a Proyectos</span></a>
+        </div>
+
+    </section>
+
+    <footer class="footer"></footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

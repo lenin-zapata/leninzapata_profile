@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Monitor - Lenin Zapata</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <section class="project-detail-hero">
+        <a href="projects.html" class="back-floating-btn">
+            <i class="fas fa-arrow-left"></i> <span data-i18n="btn_back_projects">Volver</span>
+        </a>
+
+        <h1 class="hero-title" data-i18n="p1_detail_title">Monitor Estratégico de Demanda y Supply</h1>
+        <p class="hero-description" data-i18n="p1_detail_subtitle">Optimización de proyecciones, ventas y stock.</p>
+        
+        <div class="dashboard-container">
+            <iframe 
+                class="project__iframe" 
+                src="https://lookerstudio.google.com/embed/reporting/0f8aaeab-fba3-4386-b88e-d70e54ae994f/page/1y1TF" 
+                frameborder="0" 
+                allowfullscreen 
+                sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+            </iframe>
+        </div>
+    </section>
+
+    <section class="project-detail-content">
+        
+        <div class="detail-block">
+            <h3 data-i18n="p1_summary_title">Resumen del Proyecto</h3>
+            <p data-i18n="p1_summary_desc">Este dashboard permite visualizar el grado de cumplimiento entre la demanda proyectada, las ventas y el abastecimiento. Está diseñado para apoyar la toma de decisiones estratégicas en áreas de planificación comercial, compras y logística, facilitando la identificación de brechas y oportunidades de mejora. La herramienta se alimenta de datos históricos y proyectados, y presenta indicadores clave que permiten evaluar el rendimiento por categoría, producto y periodo. Su implementación ha contribuido a mejorar la eficiencia operativa y la alineación entre áreas comerciales y operativas.</p>
+        </div>
+
+        <div class="detail-block">
+            <h3 data-i18n="p1_obj_title">¿Cuál era el objetivo?</h3>
+            <p data-i18n="p1_obj_desc">Visualizar el cumplimiento de la demanda en relación con las ventas y el abastecimiento, permitiendo identificar brechas y oportunidades de mejora en la planificación comercial.</p>
+        </div>
+
+        <div class="detail-block">
+            <h3 data-i18n="p1_kpi_title">Indicadores Clave (KPIs)</h3>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <h4 data-i18n="p1_kpi_1_name">Demanda</h4>
+                    <p data-i18n="p1_kpi_1_desc">Proyección de ventas</p>
+                </div>
+                <div class="kpi-card">
+                    <h4 data-i18n="p1_kpi_2_name">Ventas</h4>
+                    <p data-i18n="p1_kpi_2_desc">Reales registradas</p>
+                </div>
+                <div class="kpi-card">
+                    <h4 data-i18n="p1_kpi_3_name">Abastecimiento</h4>
+                    <p data-i18n="p1_kpi_3_desc">Inventario disponible</p>
+                </div>
+                <div class="kpi-card">
+                    <h4 data-i18n="p1_kpi_4_name">Órdenes</h4>
+                    <p data-i18n="p1_kpi_4_desc">Pedidos procesados</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-block">
+            <h3 data-i18n="p1_tech_title">Tecnologías</h3>
+            <p data-i18n="p1_tech_desc">Python, Google Looker Studio, Google Sheets, Firebase Database.</p>
+        </div>
+
+        <div class="detail-block" style="border-left-color: var(--accent-neon-green);">
+            <h3 data-i18n="p1_results_title">Resultados de Negocio</h3>
+            <p data-i18n="p1_results_intro">La implementación logró:</p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> <span data-i18n="p1_res_1">Reducir el riesgo de desabastecimiento.</span></li>
+                <li><i class="fas fa-check-circle"></i> <span data-i18n="p1_res_2">Optimizar la eficiencia operativa.</span></li>
+                <li><i class="fas fa-check-circle"></i> <span data-i18n="p1_res_3">Toma de decisiones basada en datos confiables.</span></li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="projects.html" class="btn btn-secondary">← <span data-i18n="btn_back_projects">Volver a Proyectos</span></a>
+        </div>
+
+    </section>
+
+    <footer class="footer"></footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

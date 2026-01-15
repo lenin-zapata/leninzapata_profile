@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llama 3 Chatbot - Lenin Zapata</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <section class="project-detail-hero">
+        <a href="projects.html" class="back-floating-btn">
+            <i class="fas fa-arrow-left"></i> <span data-i18n="btn_back_projects">Volver</span>
+        </a>
+
+        <h1 class="hero-title" data-i18n="p2_detail_title">Asistente Corporativo IA (Llama 3)</h1>
+        <p class="hero-description" data-i18n="p2_detail_subtitle">Chatbot local RAG para consulta de documentación privada.</p>
+
+        <iframe
+            src="https://chatbot-leninzapata.streamlit.app/?embed=true"
+            height="600"
+            style="width:100%; border:none; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+        ></iframe>
+
+    </section>
+
+    <section class="project-detail-content">
+        
+        <div class="detail-block">
+            <h3 data-i18n="p2_summary_title">Resumen del Proyecto</h3>
+            <p data-i18n="p2_summary_desc">Chatbot analítico empresarial que democratiza el acceso a insights de datos mediante inteligencia artificial conversacional, eliminando la necesidad de conocimientos técnicos para el análisis de datos.</p>
+        </div>
+
+        <div class="detail-block">
+            <h3 data-i18n="p2_obj_title">El Reto</h3>
+            <p data-i18n="p2_obj_desc">Democratizar el acceso a la información técnica de la empresa, permitiendo a los colaboradores hacer preguntas en lenguaje natural y obtener respuestas inmediatas con referencias a la fuente original, reduciendo el tiempo de búsqueda manual.</p>
+        </div>
+
+        <div class="detail-block">
+            <h3 data-i18n="p2_features_title">Características Clave</h3>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <h4><i class="fas fa-shield-alt"></i> Privacidad</h4>
+                    <p data-i18n="p2_feat_1">Ejecución 100% Local</p>
+                </div>
+                <div class="kpi-card">
+                    <h4><i class="fas fa-brain"></i> Modelo</h4>
+                    <p data-i18n="p2_feat_2">Meta Llama 3 (8B)</p>
+                </div>
+                <div class="kpi-card">
+                    <h4><i class="fas fa-database"></i> Vector DB</h4>
+                    <p data-i18n="p2_feat_3">Búsqueda Semántica</p>
+                </div>
+                <div class="kpi-card">
+                    <h4><i class="fas fa-bolt"></i> Latencia</h4>
+                    <p data-i18n="p2_feat_4">Respuestas en &lt;2s</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-block">
+            <h3 data-i18n="p1_tech_title">Tecnologías</h3>
+            <p data-i18n="p2_tech_desc">Python, LangChain, Ollama (Llama 3), ChromaDB, Streamlit.</p>
+        </div>
+
+        <div class="detail-block" style="border-left-color: var(--accent-neon-green);">
+            <h3 data-i18n="p1_results_title">Impacto</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> <span data-i18n="p2_res_1">Reducción del 70% en tiempo de búsqueda de información.</span></li>
+                <li><i class="fas fa-check-circle"></i> <span data-i18n="p2_res_2">Cero exposición de datos sensibles a APIs externas.</span></li>
+                <li><i class="fas fa-check-circle"></i> <span data-i18n="p2_res_3">Implementación escalable a otras áreas de negocio.</span></li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="projects.html" class="btn btn-secondary">← <span data-i18n="btn_back_projects">Volver a Proyectos</span></a>
+        </div>
+
+    </section>
+
+    <footer class="footer"></footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
